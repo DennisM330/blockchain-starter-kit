@@ -1,21 +1,28 @@
 {
   "name": "dennis-network",
   "version": "0.0.1",
-  "description": "Sample network",
+  "description": "Dennis Miller Business Network",
   "scripts": {
-    "test": "mocha --recursive"
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/dennis-network.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
   },
   "author": "Dennis Miller",
   "email": "drmiller@us.ibm.com",
   "license": "Apache-2.0",
   "devDependencies": {
-    "composer-admin": "latest",
-    "composer-client": "latest",
-    "composer-common": "latest",
-    "composer-connector-embedded": "latest",
+    "composer-admin": "^0.19.3",
+    "composer-cli": "^0.19.3",
+    "composer-client": "^0.19.3",
+    "composer-common": "^0.19.3",
+    "composer-connector-embedded": "^0.19.3",
+    "composer-cucumber-steps": "^0.19.3",
     "chai": "latest",
+    "chai-as-promised": "latest",
+    "cucumber": "^2.2.0",
     "eslint": "latest",
-    "istanbul": "latest",
+    "nyc": "latest",
     "mkdirp": "latest",
     "mocha": "latest"
   }
