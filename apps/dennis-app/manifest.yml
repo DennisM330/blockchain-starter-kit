@@ -15,6 +15,3 @@
 ---
   command: node app.js
   memory: 128M
-  REST-SERVER-URLS: {
-    "dennis-network": "https://composer-rest-server-dennis-network.mybluemix.net"
-    }
